@@ -17,7 +17,7 @@ timer = None
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     global reps
-    start_button.config(command=start_timer)
+    start_button.config(state="normal")
     window.after_cancel(timer)
     reps = 0
     timer_label.config(text="Timer", fg=GREEN)
@@ -27,7 +27,7 @@ def reset_timer():
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
-    start_button.config(command=reset_timer)
+    start_button.config(state="disabled")
     window.attributes('-topmost', 1)
     window.attributes('-topmost', 0)
     global reps
