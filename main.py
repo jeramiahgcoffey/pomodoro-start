@@ -28,6 +28,8 @@ def reset_timer():
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
     start_button.config(command=reset_timer)
+    window.attributes('-topmost', 1)
+    window.attributes('-topmost', 0)
     global reps
     reps += 1
     if reps % 8 == 0:
@@ -37,7 +39,7 @@ def start_timer():
         count_down(2)
         timer_label.config(text="Enjoy a break!", fg=PINK)
     else:
-        count_down(2)
+        count_down(10)
         timer_label.config(text="Time to Work!", fg=RED)
 
 
